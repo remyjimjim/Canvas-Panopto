@@ -1,0 +1,16 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "canvas-panopto": {
+      "appLocation": ".",
+      "apiLocation": "./api",
+      "outputLocation": "./dist",
+      "dataApiLocation": "./data-api",
+      "apiLanguage": "node",
+      "apiVersion": "12",
+      "appBuildCommand": "npm run build",
+      "run": "npm run dev",
+      "appDevserverUrl": "http://localhost:8080"
+    }
+  }
+}
