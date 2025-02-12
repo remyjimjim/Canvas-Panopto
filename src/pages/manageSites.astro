@@ -1,6 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Sequelize } from '@sequelize/core';
+import { MsSqlDialect } from '@sequelize/mssql';
+
 const pageTitle = "Manage Sites";
+
+async function list() {
+  const query = `
+    {
+      Canvas_Courses {
+        items {
+          course_id,
+          short_name
+        }
+      }
+    }
+  `;
+  const endpoint = "/data-api/graphql";
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: query })
+  });
+  const result = await response.json();
+  console.table(result.data.Canvas_Courses.items);
+}
+
+// Test the connection
+list();
 ---
 
 <html lang="en">

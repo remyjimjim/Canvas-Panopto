@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.8"
+    "@sequelize/mssql": "^7.0.0-alpha.44",
+    "astro": "^4.5.8",
+    "sequelize": "^6.37.5"
   }
 }
