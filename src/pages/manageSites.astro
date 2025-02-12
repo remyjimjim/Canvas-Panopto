@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Sequelize } from '@sequelize/core';
-import { MsSqlDialect } from '@sequelize/mssql';
+import { Sequelize } from 'sequelize';
 
 const pageTitle = "Manage Sites";
+const sequelize = new Sequelize('mssql://adminwt:fSxoCYuOtT1rf7DqpExc@wwu-webtech.database.windows.net:1433/CanvasCourseRequest');
 
 async function list() {
   const query = `
@@ -26,8 +26,18 @@ async function list() {
   console.table(result.data.Canvas_Courses.items);
 }
 
+async function connect() {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}       
+
 // Test the connection
-list();
+//list();
+connect();
 ---
 
 <html lang="en">

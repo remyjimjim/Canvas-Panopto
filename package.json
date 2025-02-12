@@ -1,5 +1,5 @@
 {
-  "name": "tutorial",
+  "name": "canopto",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@sequelize/mssql": "^7.0.0-alpha.44",
     "astro": "^4.5.8",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "tedious": "^18.6.1"
   }
 }
